@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  3d-room-planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5173
+    volumes:
+      - ./src:C:\app\src:ro
+      - ./example:C:\app\example:ro
+    networks:
+      - dev-network
+    healthcheck:
+      test:
+        [
+          'CMD',
+          'powershell',
+          '-Command',
+          'try { Invoke-WebRequest -Uri http://localhost:5173 -UseBasicParsing -TimeoutSec 5; exit 0 } catch { exit 1 }',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+networks:
+  dev-network:
+    driver: nat
