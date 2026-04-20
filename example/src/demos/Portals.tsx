@@ -94,7 +94,7 @@ function Portal({
       {/* This mesh receives the render-targets texture and draws it onto a plane */}
       <mesh scale={scale} ref={ref} {...props}>
         <planeGeometry />
-        <meshBasicMaterial map={fbo.texture} map-encoding={THREE.SRGBColorSpace} />
+        <meshBasicMaterial map={fbo.texture} colorSpace={THREE.SRGBColorSpace} />
       </mesh>
       {/* A portal by default now has its own state, separate from the root state.
           The third argument to createPortal allows you to override parts of it, in here for example
