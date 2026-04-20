@@ -15,6 +15,7 @@ const MultiView = { Component: lazy(() => import('./MultiView')) }
 const Pointcloud = { Component: lazy(() => import('./Pointcloud')) }
 const Reparenting = { Component: lazy(() => import('./Reparenting')) }
 const ResetProps = { Component: lazy(() => import('./ResetProps')) }
+const RoomPlanner = { Component: lazy(() => import('./RoomPlanner')) }
 const Selection = { Component: lazy(() => import('./Selection')) }
 const ShaderMaterial = { Component: lazy(() => import('./ShaderMaterial')) }
 const StopPropagation = { Component: lazy(() => import('./StopPropagation')) }
@@ -44,6 +45,7 @@ export {
   Pointcloud,
   Reparenting,
   ResetProps,
+  RoomPlanner,
   Selection,
   ShaderMaterial,
   StopPropagation,
